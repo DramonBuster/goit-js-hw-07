@@ -21,6 +21,4 @@ imgList.toString();
 console.log(imgList);
 
 gallery.classList.add('gallery');
-imgList.forEach(img => {
-  gallery.insertAdjacentHTML('afterbegin', `${img}`)
-})
+gallery.insertAdjacentHTML('afterbegin', `${imgList[0]}` + `${imgList[1]}` + `${imgList[2]}`)

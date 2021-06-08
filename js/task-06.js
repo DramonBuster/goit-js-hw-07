@@ -6,6 +6,7 @@ function notFocused(event) {
     const value = event.currentTarget.value;
     if (value.length !== inputLength) {
         input.classList.add('invalid')
+        input.classList.remove('valid')
     }
     if (value.length === inputLength) {
         input.classList.remove('invalid')
