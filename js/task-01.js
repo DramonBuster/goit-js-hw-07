@@ -1,9 +1,11 @@
-const categoryList = document.querySelector('#categories');
+'use strict';
 
-console.log(`В списке ${categoryList.children.length} категории.`);
+const categories = document.querySelectorAll('.item');
+console.log(`В списке ${categories.length} категории.`);
 
-const itemsList = document.querySelectorAll('.item');
-console.log(itemsList);
-
-itemsList.forEach(item => console.table(`Категория: ${item.querySelector('h2').textContent}
-Количество элементов: ${item.querySelectorAll('li').length}`));
+for (const category of categories) {
+    const headline = category.querySelector("h2");
+    const categoryItems = category.querySelectorAll("li");
+    console.log(`Категория: ${headline.textContent}`);
+    console.log(`Количество элементов: ${categoryItems.length}`)
+}

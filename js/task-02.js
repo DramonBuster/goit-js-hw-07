@@ -7,15 +7,16 @@ const ingredients = [
   'Приправы',
 ];
 
-const ingredientsList = document.querySelector('#ingredients');
+const recipe = document.querySelector('#ingredients');
 
-const addRecipe = (array) => {
-  const allIng = array.map(ing => {
-    const element = document.createElement('li')
-    element.textContent = ing
-    return element
+const addRecipe = list => {
+  const createRecipe = list.map(element => {
+    const ingredient = document.createElement('li');
+    ingredient.textContent = element;
+    return ingredient;
   })
-  ingredientsList.append(...allIng)
+
+  recipe.append(...createRecipe);
 }
 
 addRecipe(ingredients);

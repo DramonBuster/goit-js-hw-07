@@ -1,13 +1,15 @@
-const defaultName = 'незнакомец';
+'use strict';
+
+const defaultText = 'незнакомец';
 const inputText = document.querySelector('#name-input');
 const outputText = document.querySelector('#name-output');
 
-inputText.addEventListener('input', output);
-
-function output(event) {
+const updateOutput = event => {
     if (event.currentTarget.value === '') {
-        outputText.textContent = defaultName;
-    } else {
-        outputText.textContent = event.currentTarget.value;
+        return outputText.textContent = defaultText;
     }
+
+    outputText.textContent = event.currentTarget.value;
 }
+
+inputText.addEventListener('input', updateOutput)

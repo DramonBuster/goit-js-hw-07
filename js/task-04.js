@@ -1,20 +1,22 @@
+'use strict';
+
 let counterValue = 0;
 
-const counter = document.querySelector('#value')
-const buttonInc = document.querySelector('[data-action="increment"]')
-const buttonDec = document.querySelector('[data-action="decrement"]')
+const incrButt = document.querySelector('#counter button[data-action="increment"]');
+const decrButt = document.querySelector('#counter button[data-action="decrement"]');
+const counterValueText = document.querySelector('#value')
 
-const incCounter = () => {
+const increment = () => {
     counterValue += 1;
-    return counter.textContent = counterValue;
+    counterValueText.textContent = counterValue;
+    console.log(counterValue);
 }
 
-const decCounter = () => {
+const decrement = () => {
     counterValue -= 1;
-    return counter.textContent = counterValue;
+    counterValueText.textContent = counterValue;
+    console.log(counterValue);
 }
 
-buttonInc.addEventListener('click', incCounter)
-buttonDec.addEventListener('click', decCounter)
-
-console.log(counterValue);
+incrButt.addEventListener('click', increment);
+decrButt.addEventListener('click', decrement);
